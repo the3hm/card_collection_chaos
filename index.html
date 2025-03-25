@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Card Collection Viewer</title>
-  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="container">
     <!-- Sidebar -->
-    <aside id="sidebar">
+    <div id="sidebar">
       <button id="toggleSidebar">Toggle Filters</button>
       <div id="filters">
-        <label>Search:</label>
-        <input type="text" id="searchInput" placeholder="Search card text...">
+        <label for="searchBox">Search</label>
+        <input type="text" id="searchBox" placeholder="Search cards..." />
 
-        <label>Color:</label>
-        <select id="colorFilter" multiple>
-          <option value="white">White</option>
-          <option value="blue">Blue</option>
-          <option value="black">Black</option>
-          <option value="red">Red</option>
-          <option value="green">Green</option>
-        </select>
+        <label for="colorFilter">Color</label>
+        <select id="colorFilter" multiple></select>
 
-        <label>Expansion:</label>
-        <select id="expansionFilter"></select>
+        <label for="expansionFilter">Expansion</label>
+        <select id="expansionFilter" multiple></select>
 
-        <label>Casting Cost:</label>
-        <select id="costFilter">
-          <option value="any">Any</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5+">5+</option>
+        <label for="costFilter">Casting Cost</label>
+        <select id="costFilter"></select>
+
+        <label for="sortSelector">Sort By</label>
+        <select id="sortSelector">
+          <option value="name">Name</option>
+          <option value="cost">Cost</option>
+          <option value="color">Color</option>
         </select>
       </div>
-    </aside>
+    </div>
 
-    <!-- Main panel -->
-    <main id="cardPanel"></main>
+    <!-- Card display panel -->
+    <div id="cardPanel"></div>
+  </div>
 
-    <!-- Card Info Popup -->
-    <div id="cardPopup" class="hidden">
-      <div id="popupContent">
-        <span id="closePopup">&times;</span>
-        <div id="popupDetails"></div>
-      </div>
+  <!-- Card popup -->
+  <div id="cardPopup" class="hidden">
+    <div id="popupContent">
+      <span id="closePopup">&times;</span>
+      <div id="popupDetails"></div>
     </div>
   </div>
 
-  <script src="data/expansions.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Footer -->
+  <footer>
+    Card Collection Viewer by <a href="https://www.starwarsrp.net" target="_blank">starwarsrp.net</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>
