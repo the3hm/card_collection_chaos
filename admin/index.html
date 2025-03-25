@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Card Entry Admin Panel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- LOGIN PANEL -->
+  <div id="login">
+    <h2>Admin Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="login-msg"></p>
+  </div>
+
+  <!-- CARD FORM PANEL -->
+  <div id="card-form" style="display:none;">
+    <h2>Add a New Card</h2>
+    <input type="text" id="cardName" placeholder="Card Name">
+    <input type="text" id="cardType" placeholder="Type (e.g. Unit)">
+    <input type="text" id="faction" placeholder="Faction">
+    <input type="number" id="cost" placeholder="Cost">
+    <input type="text" id="rarity" placeholder="Rarity (Common, Rare, etc.)">
+    <input type="number" id="attack" placeholder="Attack">
+    <input type="number" id="health" placeholder="Health">
+    <input type="text" id="abilities" placeholder="Abilities (comma separated)">
+    <textarea id="description" placeholder="Description" rows="4"></textarea>
+    <input type="text" id="image" placeholder="Image Path (e.g. /images/card001.png)">
+
+    <div class="button-group">
+      <button onclick="generateCard()">Add Card</button>
+      <button onclick="downloadCards()">Download All Cards</button>
+      <button onclick="clearCards()">Clear Saved Cards</button>
+    </div>
+
+    <h3>Saved Cards (JSON Preview)</h3>
+    <pre id="jsonOutput">No cards saved yet.</pre>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
