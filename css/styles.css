@@ -176,3 +176,33 @@ body {
 #closePopup:hover {
   color: #ffffff;
 }
+
+.keyword {
+  color: #fcd34d;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #202225;
+  color: #b9bbbe;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  border-top: 1px solid #36393f;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+footer a {
+  color: #7289da;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
