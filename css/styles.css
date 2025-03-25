@@ -24,6 +24,7 @@ body {
   gap: 12px;
   transition: transform 0.3s ease;
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  animation: fadeIn 0.4s ease;
 }
 
 #sidebar.hidden {
@@ -54,6 +55,13 @@ body {
   border-radius: 4px;
   background-color: #40444b;
   color: #dcddde;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#filters input:focus, #filters select:focus {
+  background-color: #484b52;
+  box-shadow: 0 0 0 2px rgba(88,101,242,0.4);
+  outline: none;
 }
 
 #cardPanel {
@@ -64,6 +72,12 @@ body {
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+  animation: fadeInCards 0.5s ease;
+}
+
+@keyframes fadeInCards {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .card {
@@ -74,11 +88,29 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  animation: fadeInCardItem 0.4s ease;
+}
+
+@keyframes fadeInCardItem {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .card:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.card:active {
+  animation: clickPulse 0.4s ease;
+}
+
+@keyframes clickPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); box-shadow: 0 0 0 4px rgba(88,101,242,0.3); }
+  100% { transform: scale(1); }
 }
 
 .card img {
@@ -98,10 +130,16 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  animation: fadeIn 0.3s ease;
 }
 
 #cardPopup.hidden {
   display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 #popupContent {
@@ -112,6 +150,18 @@ body {
   width: 400px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   position: relative;
+  animation: popupSlide 0.25s ease-out;
+}
+
+@keyframes popupSlide {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 #closePopup {
